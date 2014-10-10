@@ -4,8 +4,17 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/D:/Documents/GitHub/TriviaTEC/Trivia_TEC/src/Interfaz_TriviaT/VentanaParticipantes.java</file>
-            <file>file:/D:/Documents/GitHub/TriviaTEC/Trivia_TEC/src/Interfaz_TriviaT/FormularPregunta.java</file>
+            <file>file:/D:/Documents/GitHub/TriviaTEC/Trivia_TEC/src/Interfaz_TriviaT/PreguntaSM.java</file>
+            <file>file:/D:/Documents/GitHub/TriviaTEC/Trivia_TEC/src/Interfaz_TriviaT/PreguntaSU.java</file>
+            <file>file:/D:/Documents/GitHub/TriviaTEC/Trivia_TEC/src/trivia_tec/Persona.java</file>
+            <file>file:/D:/Documents/GitHub/TriviaTEC/Trivia_TEC/src/Interfaz_TriviaT/PreguntaFV.java</file>
+            <file>file:/D:/Documents/GitHub/TriviaTEC/Trivia_TEC/src/trivia_tec/PreguntaFV.java</file>
+            <file>file:/D:/Documents/GitHub/TriviaTEC/Trivia_TEC/src/trivia_tec/Pregunta.java</file>
+            <file>file:/D:/Documents/GitHub/TriviaTEC/Trivia_TEC/src/Interfaz_TriviaT/VentanaGestion.java</file>
             <file>file:/D:/Documents/GitHub/TriviaTEC/Trivia_TEC/src/Interfaz_TriviaT/VentanaFoto.java</file>
+            <file>file:/D:/Documents/GitHub/TriviaTEC/Trivia_TEC/src/trivia_tec/PreguntaSM.java</file>
+            <file>file:/D:/Documents/GitHub/TriviaTEC/Trivia_TEC/src/Interfaz_TriviaT/VentanaInicio.java</file>
+            <file>file:/D:/Documents/GitHub/TriviaTEC/Trivia_TEC/src/trivia_tec/PreguntaSU.java</file>
         </group>
     </open-files>
 </project-private>

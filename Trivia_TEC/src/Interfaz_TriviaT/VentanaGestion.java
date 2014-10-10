@@ -366,7 +366,7 @@ public class VentanaGestion extends javax.swing.JFrame {
 
     private void formulaPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_formulaPActionPerformed
         // TODO add your handling code here:
-        FormularPregunta nuevas = new FormularPregunta();
+        PreguntaFV nuevas = new PreguntaFV();
         this.hide();
         nuevas.show();
         

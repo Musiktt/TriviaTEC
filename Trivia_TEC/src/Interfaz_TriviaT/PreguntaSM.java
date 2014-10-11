@@ -40,12 +40,12 @@ public class PreguntaSM extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         opcion4SM = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
-        jComboBox2 = new javax.swing.JComboBox();
+        jComboBoxSM = new javax.swing.JComboBox();
         guardarSM = new javax.swing.JButton();
         jLabel8 = new javax.swing.JLabel();
-        respuestaSM2 = new javax.swing.JTextField();
+        respuesta2SM = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
-        respuestaSM1 = new javax.swing.JTextField();
+        respuesta1SM = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -69,14 +69,19 @@ public class PreguntaSM extends javax.swing.JFrame {
 
         jLabel7.setText("Dificultad de la pregunta");
 
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Nivel 1", "Nivel 2", "Nivel 3", "Nivel 4", "Nivel 5" }));
-        jComboBox2.addActionListener(new java.awt.event.ActionListener() {
+        jComboBoxSM.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Nivel 1", "Nivel 2", "Nivel 3", "Nivel 4", "Nivel 5" }));
+        jComboBoxSM.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox2ActionPerformed(evt);
+                jComboBoxSMActionPerformed(evt);
             }
         });
 
         guardarSM.setText("Guardar");
+        guardarSM.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                guardarSMActionPerformed(evt);
+            }
+        });
 
         jLabel8.setText("Respuesta #1");
 
@@ -116,16 +121,18 @@ public class PreguntaSM extends javax.swing.JFrame {
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                                 .addComponent(jLabel7)
                                 .addGap(18, 18, 18)
-                                .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addGroup(layout.createSequentialGroup()
-                                    .addComponent(jLabel8)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
-                                    .addComponent(respuestaSM1, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGroup(layout.createSequentialGroup()
-                                    .addComponent(jLabel9)
-                                    .addGap(18, 18, 18)
-                                    .addComponent(respuestaSM2)))))
+                                .addComponent(jComboBoxSM, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                        .addComponent(jLabel9)
+                                        .addGap(18, 18, 18))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(jLabel8)
+                                        .addGap(18, 18, 18)))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addComponent(respuesta1SM)
+                                    .addComponent(respuesta2SM, javax.swing.GroupLayout.DEFAULT_SIZE, 227, Short.MAX_VALUE)))))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(21, 21, 21)
                         .addComponent(contentSM, javax.swing.GroupLayout.PREFERRED_SIZE, 313, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -162,15 +169,15 @@ public class PreguntaSM extends javax.swing.JFrame {
                 .addGap(39, 39, 39)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel7)
-                    .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jComboBoxSM, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(32, 32, 32)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel8)
-                    .addComponent(respuestaSM1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(respuesta1SM, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(21, 21, 21)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel9)
-                    .addComponent(respuestaSM2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(respuesta2SM, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 43, Short.MAX_VALUE)
                 .addComponent(guardarSM)
                 .addContainerGap())
@@ -183,9 +190,47 @@ public class PreguntaSM extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_contentSMActionPerformed
 
-    private void jComboBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox2ActionPerformed
+    private void jComboBoxSMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxSMActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBox2ActionPerformed
+    }//GEN-LAST:event_jComboBoxSMActionPerformed
+
+    private void guardarSMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_guardarSMActionPerformed
+        
+        String op1;//para guardar opcion1SM
+        String op2;//para guardar opcion2SM
+        String op3;//para guardar opcion3SM
+        String op4;//para guardar opcion4SM
+        String resp1;//para guardar respuesta1SM
+        String resp2;//para guardar respuesta2SM
+        String dificultadSM;//para guardar dificultadSM de pregunta
+        
+        op1 = opcion1SM.getText();
+        op2 = opcion2SM.getText();
+        op3 = opcion3SM.getText();
+        op4 = opcion4SM.getText();
+        resp1 = respuesta1SM.getText();
+        resp2 = respuesta2SM.getText();
+        
+        int obtenerdifSM = jComboBoxSM.getSelectedIndex(); //conseguir el nivel de dificultadSM
+        
+        if (obtenerdifSM == 0){
+            dificultadSM = "Nivel 1";
+        }
+        else if (obtenerdifSM == 1){
+            dificultadSM = "Nivel 2";
+        }
+        else if (obtenerdifSM == 2){
+            dificultadSM = "Nivel 3";
+        }
+        else if (obtenerdifSM == 3){
+            dificultadSM = "Nivel 4";
+        }
+        else if (obtenerdifSM == 4){
+            dificultadSM = "Nivel 5";
+        };
+        
+        
+    }//GEN-LAST:event_guardarSMActionPerformed
 
     /**
      * @param args the command line arguments
@@ -225,7 +270,7 @@ public class PreguntaSM extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField contentSM;
     private javax.swing.JButton guardarSM;
-    private javax.swing.JComboBox jComboBox2;
+    private javax.swing.JComboBox jComboBoxSM;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -239,7 +284,7 @@ public class PreguntaSM extends javax.swing.JFrame {
     private javax.swing.JTextField opcion2SM;
     private javax.swing.JTextField opcion3SM;
     private javax.swing.JTextField opcion4SM;
-    private javax.swing.JTextField respuestaSM1;
-    private javax.swing.JTextField respuestaSM2;
+    private javax.swing.JTextField respuesta1SM;
+    private javax.swing.JTextField respuesta2SM;
     // End of variables declaration//GEN-END:variables
 }

@@ -40,8 +40,8 @@ public class PreguntaSU extends javax.swing.JFrame {
         opcion3SU = new javax.swing.JTextField();
         opcion4SU = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
-        jComboBox2 = new javax.swing.JComboBox();
-        RespuestaSU = new javax.swing.JTextField();
+        jComboBoxSU = new javax.swing.JComboBox();
+        respuesta1SU = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
         guardarSU = new javax.swing.JButton();
 
@@ -73,16 +73,21 @@ public class PreguntaSU extends javax.swing.JFrame {
 
         jLabel7.setText("Dificultad de la pregunta");
 
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Nivel 1", "Nivel 2", "Nivel 3", "Nivel 4", "Nivel 5" }));
-        jComboBox2.addActionListener(new java.awt.event.ActionListener() {
+        jComboBoxSU.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Nivel 1", "Nivel 2", "Nivel 3", "Nivel 4", "Nivel 5" }));
+        jComboBoxSU.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox2ActionPerformed(evt);
+                jComboBoxSUActionPerformed(evt);
             }
         });
 
         jLabel8.setText("Respuesta");
 
         guardarSU.setText("Guardar");
+        guardarSU.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                guardarSUActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -119,8 +124,8 @@ public class PreguntaSU extends javax.swing.JFrame {
                             .addComponent(jLabel8))
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(RespuestaSU, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(jComboBoxSU, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(respuesta1SU, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(guardarSU)))
@@ -154,10 +159,10 @@ public class PreguntaSU extends javax.swing.JFrame {
                 .addGap(44, 44, 44)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel7)
-                    .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jComboBoxSU, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(42, 42, 42)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(RespuestaSU, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(respuesta1SU, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel8))
                 .addGap(44, 44, 44)
                 .addComponent(guardarSU)
@@ -175,9 +180,43 @@ public class PreguntaSU extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_opcion2SUActionPerformed
 
-    private void jComboBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox2ActionPerformed
+    private void jComboBoxSUActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxSUActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBox2ActionPerformed
+    }//GEN-LAST:event_jComboBoxSUActionPerformed
+
+    private void guardarSUActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_guardarSUActionPerformed
+        String op1;//para guardar opcion1SU
+        String op2;//para guardar opcion2SU
+        String op3;//para guardar opcion3SU
+        String op4;//para guardar opcion4SU
+        String resp1;//para guardar respuesta1SU
+        String dificultadSU;//para guardar dificultadSU de pregunta
+        
+        op1 = opcion1SU.getText();
+        op2 = opcion2SU.getText();
+        op3 = opcion3SU.getText();
+        op4 = opcion4SU.getText();
+        resp1 = respuesta1SU.getText();
+        
+        int obtenerdifSU = jComboBoxSU.getSelectedIndex(); //conseguir el nivel de dificultadSU
+        
+        if (obtenerdifSU == 0){
+            dificultadSU = "Nivel 1";
+        }
+        else if (obtenerdifSU == 1){
+            dificultadSU = "Nivel 2";
+        }
+        else if (obtenerdifSU == 2){
+            dificultadSU = "Nivel 3";
+        }
+        else if (obtenerdifSU == 3){
+            dificultadSU = "Nivel 4";
+        }
+        else if (obtenerdifSU == 4){
+            dificultadSU = "Nivel 5";
+        };
+        
+    }//GEN-LAST:event_guardarSUActionPerformed
 
     /**
      * @param args the command line arguments
@@ -215,10 +254,9 @@ public class PreguntaSU extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField RespuestaSU;
     private javax.swing.JTextField contentSU;
     private javax.swing.JButton guardarSU;
-    private javax.swing.JComboBox jComboBox2;
+    private javax.swing.JComboBox jComboBoxSU;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -231,5 +269,6 @@ public class PreguntaSU extends javax.swing.JFrame {
     private javax.swing.JTextField opcion2SU;
     private javax.swing.JTextField opcion3SU;
     private javax.swing.JTextField opcion4SU;
+    private javax.swing.JTextField respuesta1SU;
     // End of variables declaration//GEN-END:variables
 }

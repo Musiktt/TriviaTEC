@@ -161,7 +161,7 @@ public class PreguntaFV extends javax.swing.JFrame {
         
         String resp;//para guardar respuestaFV
         String dificultadFV;//para guardar dificultadFV de pregunta
-        
+        int vecesAc = 0;
        
         resp = respuestaFV.getText();
         
@@ -182,8 +182,7 @@ public class PreguntaFV extends javax.swing.JFrame {
         else if (obtenerdifFV == 4){
             dificultadFV = "Nivel 5";
         };
-        
-        juego.crearPregunta();
+        Pregunta nuevaP = new Pregunta(resp, obtenerdifFV, vecesAc);
     }//GEN-LAST:event_guardarFVActionPerformed
 
     /**

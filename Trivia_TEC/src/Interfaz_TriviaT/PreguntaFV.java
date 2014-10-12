@@ -38,10 +38,6 @@ public class PreguntaFV extends javax.swing.JFrame {
         guardarFV = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         jComboBoxFV = new javax.swing.JComboBox();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        opcion1 = new javax.swing.JTextField();
-        opcion2 = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
         respuestaFV = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
@@ -72,16 +68,6 @@ public class PreguntaFV extends javax.swing.JFrame {
             }
         });
 
-        jLabel1.setText("Opción #1");
-
-        jLabel4.setText("Opción #2");
-
-        opcion2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                opcion2ActionPerformed(evt);
-            }
-        });
-
         jLabel5.setText("Respuesta");
 
         respuestaFV.addActionListener(new java.awt.event.ActionListener() {
@@ -104,17 +90,7 @@ public class PreguntaFV extends javax.swing.JFrame {
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(contentFV)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel4)
-                                    .addComponent(jLabel1))
-                                .addGap(51, 51, 51)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(opcion2, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(opcion1, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(0, 35, Short.MAX_VALUE)))))
+                        .addComponent(contentFV)))
                 .addContainerGap())
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -132,7 +108,7 @@ public class PreguntaFV extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(33, 33, 33)
                         .addComponent(jLabel2)))
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addGap(0, 60, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(guardarFV)
@@ -142,24 +118,12 @@ public class PreguntaFV extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel6)
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabel2)
-                        .addGap(18, 18, 18)
-                        .addComponent(contentFV, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(68, 68, 68))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel1)
-                            .addComponent(opcion1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(19, 19, 19)))
-                .addGap(11, 11, 11)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4)
-                    .addComponent(opcion2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(25, 25, 25)
+                .addComponent(jLabel6)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel2)
+                .addGap(18, 18, 18)
+                .addComponent(contentFV, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(36, 36, 36)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jComboBoxFV, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -183,10 +147,6 @@ public class PreguntaFV extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jComboBoxFVActionPerformed
 
-    private void opcion2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_opcion2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_opcion2ActionPerformed
-
     private void respuestaFVActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_respuestaFVActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_respuestaFVActionPerformed
@@ -195,13 +155,11 @@ public class PreguntaFV extends javax.swing.JFrame {
     
     private void guardarFVActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_guardarFVActionPerformed
         
-        String op1;//para guardar opcion1FV
-        String op2;//para guardar opcion2FV
+        
         String resp;//para guardar respuestaFV
         String dificultadFV;//para guardar dificultadFV de pregunta
         
-        op1 = opcion1.getText();
-        op2 = opcion2.getText();
+       
         resp = respuestaFV.getText();
         
         int obtenerdifFV = jComboBoxFV.getSelectedIndex(); //conseguir el nivel de dificultadFV
@@ -262,14 +220,10 @@ public class PreguntaFV extends javax.swing.JFrame {
     private javax.swing.JTextField contentFV;
     private javax.swing.JButton guardarFV;
     private javax.swing.JComboBox jComboBoxFV;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JTextField opcion1;
-    private javax.swing.JTextField opcion2;
     private javax.swing.JTextField respuestaFV;
     // End of variables declaration//GEN-END:variables
 }

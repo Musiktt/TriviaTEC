@@ -19,6 +19,8 @@ public class VentanaGestion extends javax.swing.JFrame {
      */
     public VentanaGestion() {
         initComponents();
+        errorCurso.setVisible(false);
+        errorProfesor.setVisible(false);
     }
 
     /**
@@ -61,6 +63,21 @@ public class VentanaGestion extends javax.swing.JFrame {
         jLabel10 = new javax.swing.JLabel();
         comboTipoP = new javax.swing.JComboBox();
         jPanel3 = new javax.swing.JPanel();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
+        jLabel15 = new javax.swing.JLabel();
+        jLabel16 = new javax.swing.JLabel();
+        tNombreCurso = new javax.swing.JTextField();
+        tCodigoCurso = new javax.swing.JTextField();
+        errorCurso = new javax.swing.JLabel();
+        tCupoCurso = new javax.swing.JTextField();
+        cbSemestre = new javax.swing.JComboBox();
+        tAñoCurso = new javax.swing.JTextField();
+        tProfesorCurso = new javax.swing.JTextField();
+        errorProfesor = new javax.swing.JLabel();
+        bAgregarCurso = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
@@ -270,15 +287,116 @@ public class VentanaGestion extends javax.swing.JFrame {
 
         jTabbedPane2.addTab("Preguntas", jPanel2);
 
+        jLabel11.setText("Nombre");
+
+        jLabel12.setText("Código:");
+
+        jLabel13.setText("Cupo:");
+
+        jLabel14.setText("Semestre:");
+
+        jLabel15.setText("Año:");
+
+        jLabel16.setText("Profesor (cédula):");
+
+        tCodigoCurso.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tCodigoCursoActionPerformed(evt);
+            }
+        });
+
+        errorCurso.setForeground(new java.awt.Color(255, 0, 0));
+        errorCurso.setText("Este curso ya existe");
+
+        cbSemestre.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "1", "2" }));
+
+        errorProfesor.setForeground(new java.awt.Color(255, 0, 0));
+        errorProfesor.setText("No se encuentra el profesor");
+
+        bAgregarCurso.setText("Agregar");
+        bAgregarCurso.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bAgregarCursoActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 774, Short.MAX_VALUE)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addComponent(jLabel11)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(tNombreCurso, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel15)
+                            .addComponent(jLabel16))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(errorProfesor)
+                            .addComponent(tProfesorCurso, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel3Layout.createSequentialGroup()
+                                .addComponent(jLabel14)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(cbSemestre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(tAñoCurso, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGroup(jPanel3Layout.createSequentialGroup()
+                                    .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(jLabel12)
+                                        .addComponent(jLabel13))
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                    .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(tCupoCurso, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(errorCurso)
+                                        .addComponent(tCodigoCurso, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                        .addGap(77, 77, 77)
+                        .addComponent(bAgregarCurso, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(324, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 348, Short.MAX_VALUE)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(44, 44, 44)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel11)
+                    .addComponent(tNombreCurso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(24, 24, 24)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel12)
+                            .addComponent(tCodigoCurso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(1, 1, 1)
+                        .addComponent(errorCurso)
+                        .addGap(6, 6, 6)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel13)
+                            .addComponent(tCupoCurso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel14)
+                            .addComponent(cbSemestre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(20, 20, 20)
+                        .addComponent(bAgregarCurso, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel15)
+                    .addComponent(tAñoCurso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel16)
+                    .addComponent(tProfesorCurso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(errorProfesor)
+                .addContainerGap(65, Short.MAX_VALUE))
         );
 
         jTabbedPane2.addTab("Curso", jPanel3);
@@ -413,6 +531,42 @@ public class VentanaGestion extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_comboTipoPActionPerformed
 
+    private void tCodigoCursoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tCodigoCursoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tCodigoCursoActionPerformed
+
+    private void limpiarC(){
+        tNombreCurso.setText("");
+        tCodigoCurso.setText("");
+        tCupoCurso.setText("");
+        tAñoCurso.setText("");
+        tProfesorCurso.setText("");
+    }
+    private void bAgregarCursoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bAgregarCursoActionPerformed
+        // TODO add your handling code here:
+        boolean errorC = false;
+        boolean errorP = false;
+        String nombre = tNombreCurso.getText();
+        String codigo = tCodigoCurso.getText();
+        int cupo = Integer.parseInt(tCupoCurso.getText());
+        int semestre = cbSemestre.getSelectedIndex();
+        int año = Integer.parseInt(tAñoCurso.getText());
+        Profesor profesor = juego.buscarProfesor(tProfesorCurso.getText());
+        if(profesor==null)
+        errorP = true;
+        if(juego.verificarCurso(codigo))
+        errorC = true;
+        errorProfesor.setVisible(errorP);
+        errorCurso.setVisible(errorC);
+        if((errorP==false)&&(errorC==false)){
+            Curso nuevoC = new Curso(nombre, codigo, cupo, semestre, año, profesor);
+            juego.agregarCurso(nuevoC);
+            limpiarC();
+        }
+        errorP = false;
+        errorC = false;
+    }//GEN-LAST:event_bAgregarCursoActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -450,14 +604,24 @@ public class VentanaGestion extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton bAgregarCurso;
     private javax.swing.JButton bExaminar;
     private javax.swing.JButton bRegistrar;
     private javax.swing.ButtonGroup buttonGroup1;
+    private javax.swing.JComboBox cbSemestre;
     private javax.swing.JComboBox comboTipoP;
+    private javax.swing.JLabel errorCurso;
+    private javax.swing.JLabel errorProfesor;
     private javax.swing.JButton formulaP;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -475,12 +639,17 @@ public class VentanaGestion extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField6;
     private javax.swing.JRadioButton rbEstudiante;
     private javax.swing.JRadioButton rbProfesor;
+    private javax.swing.JTextField tAñoCurso;
     private javax.swing.JTextField tCarne;
     private javax.swing.JTextField tCedula;
+    private javax.swing.JTextField tCodigoCurso;
     private javax.swing.JPasswordField tContraseña;
     private javax.swing.JTextField tCorreo;
+    private javax.swing.JTextField tCupoCurso;
     private javax.swing.JTextField tCurso;
     private javax.swing.JTextField tFecha;
     private javax.swing.JTextField tNombre;
+    private javax.swing.JTextField tNombreCurso;
+    private javax.swing.JTextField tProfesorCurso;
     // End of variables declaration//GEN-END:variables
 }

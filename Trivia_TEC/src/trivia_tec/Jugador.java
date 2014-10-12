@@ -8,7 +8,7 @@ import java.util.Vector;
 
 public class Jugador {
     private Estudiante estudiante;
-    private Vector temasDom;
+    private Vector temasDom = new Vector();
     private int comodinesUsados;
     private int monedas; //Empieza con 50 monedas.
     private int vidas; //Empieza con 3 vidas.  

@@ -6,7 +6,7 @@ import java.util.Vector;
 
 //Controla los cursos, aceptando estudiantes nuevos asi como regulando tanto los temas como las preguntas. Heredan de Persona.
 public class Profesor extends Persona{
-    private Vector cursos;//lista
+    private Vector cursos = new Vector();//lista
 
     public Profesor() {
     }

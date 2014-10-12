@@ -7,7 +7,7 @@ import java.util.Vector;
 //En esta clase se implementan los jugadores en una instancia del juego, se ajusta la dificultad y se cuenta la cantidad de participantes.
 public class Partida {
     private String nombre;
-    private Vector participantes;// Lista tipo vector
+    private Vector participantes = new Vector();// Lista tipo vector
     private int cantParticipantes;
     private int dificultad; //De 1 a 5.
 

@@ -7,9 +7,9 @@ import java.util.Vector;
 //Instancia que permite guardar la información de los jugadores, así como permitirles ser parte del juego y de varios cursos. Hereda de Persona.
 public class Estudiante extends Persona{
     private int carne;
-    private Vector cursos;
-    private Vector pregCorrectas;
-    private Vector pregIncorrectas;
+    private Vector cursos = new Vector();
+    private Vector pregCorrectas = new Vector();
+    private Vector pregIncorrectas = new Vector();
     private int comodinesUsados;
     private int pregFormuladas;
 

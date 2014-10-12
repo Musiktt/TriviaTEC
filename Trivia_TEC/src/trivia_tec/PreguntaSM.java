@@ -6,8 +6,8 @@ import java.util.Vector;
 
 //Tipo de pregunta que posee varias opciones y varias respuestas correctas.
 public class PreguntaSM extends Pregunta{
-    private Vector opciones;//lista tipo vector.
-    private Vector respuestas;//lista tipo vector
+    private Vector opciones = new Vector();//lista tipo vector.
+    private Vector respuestas = new Vector();//lista tipo vector
 
     public PreguntaSM() {
     }

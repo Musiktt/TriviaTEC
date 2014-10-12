@@ -25,6 +25,7 @@ public class VentanaParticipantes extends javax.swing.JFrame {
         errorCurso.hide();
         errorEstudiante.hide();
         errorMinimo.hide();
+        señalAgregado.hide();
     }
 
     /**
@@ -47,6 +48,7 @@ public class VentanaParticipantes extends javax.swing.JFrame {
         errorCurso = new javax.swing.JLabel();
         errorEstudiante = new javax.swing.JLabel();
         errorMinimo = new javax.swing.JLabel();
+        señalAgregado = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -88,6 +90,9 @@ public class VentanaParticipantes extends javax.swing.JFrame {
         errorMinimo.setForeground(new java.awt.Color(255, 0, 0));
         errorMinimo.setText("No hay suficientes jugadores");
 
+        señalAgregado.setForeground(new java.awt.Color(0, 204, 0));
+        señalAgregado.setText("(Agregado)");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -99,14 +104,15 @@ public class VentanaParticipantes extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(bDificultad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(bAgregar)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel1)
-                            .addComponent(jLabel3))
+                            .addComponent(jLabel3)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel2)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(bDificultad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(errorEstudiante)
@@ -114,8 +120,10 @@ public class VentanaParticipantes extends javax.swing.JFrame {
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                 .addComponent(tCarne)
                                 .addComponent(tCurso, javax.swing.GroupLayout.DEFAULT_SIZE, 150, Short.MAX_VALUE))
-                            .addComponent(errorMinimo)))
-                    .addComponent(bAgregar))
+                            .addComponent(errorMinimo)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(38, 38, 38)
+                                .addComponent(señalAgregado)))))
                 .addContainerGap(95, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -137,7 +145,9 @@ public class VentanaParticipantes extends javax.swing.JFrame {
                 .addComponent(errorMinimo)
                 .addGap(1, 1, 1)
                 .addComponent(bAgregar)
-                .addGap(36, 36, 36)
+                .addGap(4, 4, 4)
+                .addComponent(señalAgregado)
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(bDificultad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -161,6 +171,8 @@ public class VentanaParticipantes extends javax.swing.JFrame {
                     Jugador nuevo = new Jugador(actual);
                     partida.registrar(nuevo);
                     partida.setCantParticipantes(partida.getCantParticipantes()+1);
+                    señalAgregado.setText(actual.getNombre()+" listo para jugar!");
+                    señalAgregado.setVisible(true);
                     band = true;
                 }
                       
@@ -234,6 +246,7 @@ public class VentanaParticipantes extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel señalAgregado;
     private javax.swing.JTextField tCarne;
     private javax.swing.JTextField tCurso;
     // End of variables declaration//GEN-END:variables

@@ -8,7 +8,7 @@ import java.util.Vector;
 public class Tema {
     private String nombre;
     private int duracion;//En semanas
-    private Vector preguntas;//lista tipo vector.
+    private Vector preguntas = new Vector();//lista tipo vector.
 
     public Tema() {
     }

@@ -6,7 +6,7 @@ import java.util.Vector;
 
 //Tipo de pregunta con varias opciones y una sola respuesta. Hereda de Pregunta.
 public class PreguntaSU extends Pregunta{
-    private Vector opciones;//lista tipo vector.
+    private Vector opciones = new Vector();//lista tipo vector.
     private String respuesta;
 
     public PreguntaSU() {

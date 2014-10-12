@@ -12,8 +12,8 @@ public class PreguntaSM extends Pregunta{
     public PreguntaSM() {
     }
 
-    public PreguntaSM(String contenido, int dificultad, int vecesAcertada) {
-        super(contenido, dificultad, vecesAcertada);
+    public PreguntaSM(String contenido, int dificultad) {
+        super(contenido, dificultad);
     }
 
 

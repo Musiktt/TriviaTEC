@@ -11,8 +11,8 @@ public class PreguntaFV extends Pregunta {
     public PreguntaFV() {
     }
 
-    public PreguntaFV(String opc1, String opc2, String respuesta, String contenido, int dificultad, int vecesAcertada) {
-        super(contenido, dificultad, vecesAcertada);
+    public PreguntaFV(String opc1, String opc2, String respuesta, String contenido, int dificultad) {
+        super(contenido, dificultad);
         this.opc1 = opc1;
         this.opc2 = opc2;
         this.respuesta = respuesta;

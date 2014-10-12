@@ -11,10 +11,10 @@ public class Pregunta {
     public Pregunta() {
     }
 
-    public Pregunta(String contenido, int dificultad, int vecesAcertada) {
+    public Pregunta(String contenido, int dificultad) {
         this.contenido = contenido;
         this.dificultad = dificultad;
-        this.vecesAcertada = vecesAcertada;
+        this.vecesAcertada = 0;
     }
 
     public String getContenido() {

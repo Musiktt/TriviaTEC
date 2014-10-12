@@ -12,8 +12,8 @@ public class PreguntaSU extends Pregunta{
     public PreguntaSU() {
     }
 
-    public PreguntaSU(String respuesta, String contenido, int dificultad, int vecesAcertada) {
-        super(contenido, dificultad, vecesAcertada);
+    public PreguntaSU(String respuesta, String contenido, int dificultad) {
+        super(contenido, dificultad);
         this.respuesta = respuesta;
     }
 

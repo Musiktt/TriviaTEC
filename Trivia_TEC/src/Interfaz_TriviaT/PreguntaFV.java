@@ -183,6 +183,7 @@ public class PreguntaFV extends javax.swing.JFrame {
             dificultadFV = "Nivel 5";
         };
         Pregunta nuevaP = new Pregunta(resp, obtenerdifFV);
+        crearPregunta(nuevaP);
     }//GEN-LAST:event_guardarFVActionPerformed
 
     /**

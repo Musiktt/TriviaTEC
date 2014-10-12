@@ -21,6 +21,8 @@ public class VentanaGestion extends javax.swing.JFrame {
         initComponents();
         errorCurso.setVisible(false);
         errorProfesor.setVisible(false);
+        errorCurso2.setVisible(false);
+        errorTema.setVisible(false);
     }
 
     /**
@@ -78,6 +80,19 @@ public class VentanaGestion extends javax.swing.JFrame {
         tProfesorCurso = new javax.swing.JTextField();
         errorProfesor = new javax.swing.JLabel();
         bAgregarCurso = new javax.swing.JButton();
+        jPanel4 = new javax.swing.JPanel();
+        jLabel19 = new javax.swing.JLabel();
+        tCursoTema = new javax.swing.JTextField();
+        errorCurso2 = new javax.swing.JLabel();
+        jLabel17 = new javax.swing.JLabel();
+        tNombreTema = new javax.swing.JTextField();
+        errorTema = new javax.swing.JLabel();
+        jLabel18 = new javax.swing.JLabel();
+        tDuracionTema = new javax.swing.JTextField();
+        jLabel20 = new javax.swing.JLabel();
+        tImagenTema = new javax.swing.JTextField();
+        bExaminar1 = new javax.swing.JButton();
+        bAgregarTema = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
@@ -282,7 +297,7 @@ public class VentanaGestion extends javax.swing.JFrame {
                     .addComponent(comboTipoP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(68, 68, 68)
                 .addComponent(formulaP)
-                .addContainerGap(144, Short.MAX_VALUE))
+                .addContainerGap(205, Short.MAX_VALUE))
         );
 
         jTabbedPane2.addTab("Preguntas", jPanel2);
@@ -396,10 +411,110 @@ public class VentanaGestion extends javax.swing.JFrame {
                     .addComponent(tProfesorCurso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(errorProfesor)
-                .addContainerGap(65, Short.MAX_VALUE))
+                .addContainerGap(126, Short.MAX_VALUE))
         );
 
         jTabbedPane2.addTab("Curso", jPanel3);
+
+        jLabel19.setText("Código del curso:");
+
+        errorCurso2.setForeground(new java.awt.Color(255, 0, 0));
+        errorCurso2.setText("Este curso no existe");
+
+        jLabel17.setText("Nombre:");
+
+        errorTema.setForeground(new java.awt.Color(255, 0, 0));
+        errorTema.setText("Este tema ya existe");
+
+        jLabel18.setText("Duración:");
+
+        jLabel20.setText("Imagen:");
+
+        bExaminar1.setText("Examinar...");
+        bExaminar1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bExaminar1ActionPerformed(evt);
+            }
+        });
+
+        bAgregarTema.setText("Agregar");
+        bAgregarTema.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bAgregarTemaActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel4Layout.createSequentialGroup()
+                                .addComponent(jLabel19)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(errorCurso2)
+                                    .addComponent(tCursoTema, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(jPanel4Layout.createSequentialGroup()
+                                .addComponent(jLabel17)
+                                .addGap(18, 18, 18)
+                                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(errorTema)
+                                    .addComponent(tNombreTema, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addGap(46, 46, 46)
+                        .addComponent(bAgregarTema, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(376, Short.MAX_VALUE))
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel4Layout.createSequentialGroup()
+                                .addComponent(jLabel18)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(tDuracionTema, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel4Layout.createSequentialGroup()
+                                .addComponent(jLabel20)
+                                .addGap(19, 19, 19)
+                                .addComponent(tImagenTema, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(bExaminar1)))
+                        .addGap(0, 0, Short.MAX_VALUE))))
+        );
+        jPanel4Layout.setVerticalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGap(55, 55, 55)
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel19)
+                            .addComponent(tCursoTema, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(1, 1, 1)
+                        .addComponent(errorCurso2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel17)
+                            .addComponent(tNombreTema, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(bAgregarTema, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(errorTema)
+                .addGap(11, 11, 11)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel18)
+                    .addComponent(tDuracionTema, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(31, 31, 31)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel20)
+                    .addComponent(tImagenTema, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(bExaminar1))
+                .addContainerGap(183, Short.MAX_VALUE))
+        );
+
+        jTabbedPane2.addTab("Temas", jPanel4);
 
         jButton1.setText("< - Atrás");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -567,6 +682,37 @@ public class VentanaGestion extends javax.swing.JFrame {
         errorC = false;
     }//GEN-LAST:event_bAgregarCursoActionPerformed
 
+    private void bExaminar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bExaminar1ActionPerformed
+        // TODO add your handling code here:
+        //foto.setVisible(true);
+    }//GEN-LAST:event_bExaminar1ActionPerformed
+
+    private void bAgregarTemaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bAgregarTemaActionPerformed
+        // TODO add your handling code here:
+
+        String nombre = tNombreTema.getText();
+        int duracion = Integer.parseInt(tDuracionTema.getText());
+        Curso curso = juego.buscarCurso(tCursoTema.getText());
+        if(curso==null)
+        errorCurso2.setVisible(true);
+        else{
+            if(!curso.verificarTema(nombre)){
+                Tema nuevoT = new Tema(nombre, duracion);
+                curso.crearTema(nuevoT);
+                tNombreTema.setText("");
+                tDuracionTema.setText("");
+                tCursoTema.setText("");
+                errorCurso2.setVisible(false);
+                errorTema.setVisible(false);
+            }
+
+            else{
+                errorTema.setVisible(true);
+            }
+        }
+
+    }//GEN-LAST:event_bAgregarTemaActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -605,13 +751,17 @@ public class VentanaGestion extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton bAgregarCurso;
+    private javax.swing.JButton bAgregarTema;
     private javax.swing.JButton bExaminar;
+    private javax.swing.JButton bExaminar1;
     private javax.swing.JButton bRegistrar;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JComboBox cbSemestre;
     private javax.swing.JComboBox comboTipoP;
     private javax.swing.JLabel errorCurso;
+    private javax.swing.JLabel errorCurso2;
     private javax.swing.JLabel errorProfesor;
+    private javax.swing.JLabel errorTema;
     private javax.swing.JButton formulaP;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
@@ -622,7 +772,11 @@ public class VentanaGestion extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -633,6 +787,7 @@ public class VentanaGestion extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTabbedPane jTabbedPane2;
@@ -647,9 +802,13 @@ public class VentanaGestion extends javax.swing.JFrame {
     private javax.swing.JTextField tCorreo;
     private javax.swing.JTextField tCupoCurso;
     private javax.swing.JTextField tCurso;
+    private javax.swing.JTextField tCursoTema;
+    private javax.swing.JTextField tDuracionTema;
     private javax.swing.JTextField tFecha;
+    private javax.swing.JTextField tImagenTema;
     private javax.swing.JTextField tNombre;
     private javax.swing.JTextField tNombreCurso;
+    private javax.swing.JTextField tNombreTema;
     private javax.swing.JTextField tProfesorCurso;
     // End of variables declaration//GEN-END:variables
 }

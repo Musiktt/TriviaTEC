@@ -129,5 +129,16 @@ public class Curso {
         temas.remove(t);
     }
     
+    public boolean verificarTema(String n){
+        Tema actual;
+        for(int i = 0; i<temas.size(); i++){
+            actual = (Tema) temas.get(i);
+            if(actual.getNombre().equalsIgnoreCase(n)){
+                return true;
+            }
+        }
+        return false;
+    }
+    
     
 }

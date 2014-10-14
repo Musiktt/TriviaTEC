@@ -5,8 +5,9 @@
  */
 
 package Interfaz_TriviaT;
-import static trivia_tec.Trivia_TEC.juego;
+import java.util.Vector;
 import trivia_tec.*;
+import static trivia_tec.Trivia_TEC.juego;
 /**
  *
  * @author Stward
@@ -18,6 +19,11 @@ public class PreguntaFV extends javax.swing.JFrame {
      */
     public PreguntaFV() {
         initComponents();
+        Vector cursos = juego.getCursos();
+        for(int i = 0; i<cursos.size(); i++){
+            Curso actual = (Curso) cursos.get(i);
+            cursoFV.addItem(actual.getCodigo());
+        }
     }
 
     PreguntaFV(Trivia juego) {

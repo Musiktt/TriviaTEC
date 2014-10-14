@@ -566,10 +566,8 @@ public class VentanaGestion extends javax.swing.JFrame {
             String contraseña = tContraseña.getText();
             String fRegistro = tFecha.getText();
             Curso curso = juego.buscarCurso(tCurso.getText());
-            Estudiante nuevoE = new Estudiante(carne, nombre, cedula, correo, contraseña, fRegistro);
-            System.out.println("aqui");
+            Estudiante nuevoE = new Estudiante(carne, nombre, cedula, correo, contraseña, fRegistro);           
             if(((curso.getEstMatriculados()).size())<=curso.getCupo()){
-                System.out.println("Entro");
                 juego.agregarEstudiante(nuevoE, curso);
             }
             limpiar();
@@ -667,10 +665,12 @@ public class VentanaGestion extends javax.swing.JFrame {
         int semestre = cbSemestre.getSelectedIndex();
         int año = Integer.parseInt(tAñoCurso.getText());
         Profesor profesor = juego.buscarProfesor(tProfesorCurso.getText());
-        if(profesor==null)
-        errorP = true;
-        if(juego.verificarCurso(codigo))
-        errorC = true;
+        if(profesor==null){
+            errorP = true;
+        }
+        if(juego.verificarCurso(codigo)){
+            errorC = true;
+        }
         errorProfesor.setVisible(errorP);
         errorCurso.setVisible(errorC);
         if((errorP==false)&&(errorC==false)){

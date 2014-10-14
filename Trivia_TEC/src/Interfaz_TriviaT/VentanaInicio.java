@@ -143,6 +143,11 @@ public class VentanaInicio extends javax.swing.JFrame {
         juego.agregarProfesor(profe1);
         Curso curso1 = new Curso("Programación Orientada a Objetos", "IC2101", 30, 2, 2014, profe1);
         juego.agregarCurso(curso1);
+        Estudiante est1 = new Estudiante(2014012861, "Gabriel", "2-123-123", "gabrielrojas_a", "123", "10/10/2014");
+        juego.agregarEstudiante(est1, curso1);
+        Estudiante est2 = new Estudiante(2014012345, "Stward", "2-123-123", "musiktt", "123", "10/10/2014");
+        juego.agregarEstudiante(est2, curso1);
+        
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

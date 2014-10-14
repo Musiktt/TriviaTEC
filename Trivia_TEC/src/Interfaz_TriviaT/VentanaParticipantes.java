@@ -5,6 +5,7 @@
  */
 
 package Interfaz_TriviaT;
+import java.util.Vector;
 import static trivia_tec.Trivia_TEC.juego;
 import trivia_tec.*;
 
@@ -17,6 +18,7 @@ public class VentanaParticipantes extends javax.swing.JFrame {
     
     Partida partida = new Partida();
     
+    
     /**
      * Creates new form VentanaParticipantes
      * @param juego */
@@ -26,6 +28,7 @@ public class VentanaParticipantes extends javax.swing.JFrame {
         errorEstudiante.hide();
         errorMinimo.hide();
         señalAgregado.hide();
+        juego.setPartida(partida);
     }
 
     /**
@@ -190,7 +193,9 @@ public class VentanaParticipantes extends javax.swing.JFrame {
         if(partida.getCantParticipantes()>=2){
             partida.setDificultad(bDificultad.getSelectedIndex()+1);
             partida.setNombre("Partida1");
-            this.hide();
+            VentanaPreJuego pre = new VentanaPreJuego();
+            pre.setVisible(true);
+            this.setVisible(false);
         }
         else{
             errorMinimo.setVisible(true);
@@ -234,6 +239,7 @@ public class VentanaParticipantes extends javax.swing.JFrame {
                 new VentanaParticipantes(juego).setVisible(true);
             }
         });
+        
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

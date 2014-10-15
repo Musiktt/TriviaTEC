@@ -256,6 +256,6 @@ public class VentanaParticipantes extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel señalAgregado;
     private javax.swing.JTextField tCarne;
-    private javax.swing.JTextField tCurso;
+    public static javax.swing.JTextField tCurso;
     // End of variables declaration//GEN-END:variables
 }

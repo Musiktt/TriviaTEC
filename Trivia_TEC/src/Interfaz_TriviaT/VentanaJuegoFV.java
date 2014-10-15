@@ -17,6 +17,7 @@ public class VentanaJuegoFV extends javax.swing.JFrame {
      */
     public VentanaJuegoFV() {
         initComponents();
+        
     }
 
     /**
@@ -31,7 +32,7 @@ public class VentanaJuegoFV extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        tContenido = new javax.swing.JTextArea();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
 
@@ -41,9 +42,9 @@ public class VentanaJuegoFV extends javax.swing.JFrame {
 
         jLabel2.setText("Tema:");
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jScrollPane1.setViewportView(jTextArea1);
+        tContenido.setColumns(20);
+        tContenido.setRows(5);
+        jScrollPane1.setViewportView(tContenido);
 
         jButton1.setText("Verdadero");
 
@@ -126,6 +127,6 @@ public class VentanaJuegoFV extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextArea jTextArea1;
+    private javax.swing.JTextArea tContenido;
     // End of variables declaration//GEN-END:variables
 }

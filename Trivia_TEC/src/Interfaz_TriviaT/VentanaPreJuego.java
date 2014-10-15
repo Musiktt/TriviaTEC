@@ -28,6 +28,7 @@ public class VentanaPreJuego extends javax.swing.JFrame {
         actualizarJugadores();
         actualizarTemas();
         pregunta.setVisible(false);
+        tema.setVisible(false);
         
     }
     
@@ -86,6 +87,7 @@ public class VentanaPreJuego extends javax.swing.JFrame {
         bJugar = new javax.swing.JButton();
         jTextField1 = new javax.swing.JTextField();
         pregunta = new javax.swing.JTextField();
+        tema = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -126,6 +128,8 @@ public class VentanaPreJuego extends javax.swing.JFrame {
 
         pregunta.setText("jTextField2");
 
+        tema.setText("jTextField2");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -145,7 +149,8 @@ public class VentanaPreJuego extends javax.swing.JFrame {
                         .addGap(83, 83, 83)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(pregunta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(bJugar))))
+                            .addComponent(bJugar)
+                            .addComponent(tema, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(48, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -165,7 +170,9 @@ public class VentanaPreJuego extends javax.swing.JFrame {
                         .addGap(102, 102, 102)
                         .addComponent(bJugar)
                         .addGap(70, 70, 70)
-                        .addComponent(pregunta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(pregunta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(tema, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(73, Short.MAX_VALUE))
         );
 
@@ -181,24 +188,31 @@ public class VentanaPreJuego extends javax.swing.JFrame {
         Random rand = new Random();
         int n = rand.nextInt(temp.getTemas().size());
         Tema temaRandom = (Tema) temp.getTemas().get(n);
+        tema.setText(temaRandom.getNombre());
         
         int m = rand.nextInt(temaRandom.getPreguntas().size());
         Object preguntaRandom = temaRandom.getPreguntas().get(m);
         String clase = preguntaRandom.getClass().getName();
+        
         if(clase.equalsIgnoreCase("trivia_tec.PreguntaFV")){
             VentanaJuegoFV juegoFV = new VentanaJuegoFV();
             juegoFV.setVisible(true);
-            PreguntaFV pregunta = (PreguntaFV) preguntaRandom;
+            PreguntaFV preguntaFV = (PreguntaFV) preguntaRandom;
+            pregunta.setText(preguntaFV.toString());
         }
         else if(clase.equalsIgnoreCase("trivia_tec.PreguntaSM")){
             VentanaJuegoSM juegoSM = new VentanaJuegoSM();
             juegoSM.setVisible(true);
+            PreguntaSM preguntaSM = (PreguntaSM) preguntaRandom;
+            pregunta.setText(preguntaSM.toString());
         }
         else if(clase.equalsIgnoreCase("trivia_tec.PreguntaSU")){
             VentanaJuegoSU juegoSU = new VentanaJuegoSU();
             juegoSU.setVisible(true);
+            PreguntaSU preguntaSU = (PreguntaSU) preguntaRandom;
+            pregunta.setText(preguntaSU.toString());
         }
-            
+          
     }//GEN-LAST:event_bJugarActionPerformed
 
     /**
@@ -246,8 +260,9 @@ public class VentanaPreJuego extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
     public static javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField pregunta;
+    public static javax.swing.JTextField pregunta;
     private javax.swing.JTable tJugadores;
     public static javax.swing.JTable tTemas;
+    private javax.swing.JTextField tema;
     // End of variables declaration//GEN-END:variables
 }

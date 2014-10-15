@@ -9,7 +9,7 @@ import java.util.Vector;
 public class Trivia {
     private Partida partida;
     private Vector cursos = new Vector();
-    private Vector profesores = new Vector();
+    public Vector profesores = new Vector();
 
     public Trivia(Partida partida, Vector cursos, Vector profesores) {
         this.partida = partida;

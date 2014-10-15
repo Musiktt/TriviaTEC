@@ -10,12 +10,12 @@ package Interfaz_TriviaT;
  *
  * @author Gabriel
  */
-public class VentanaJuego extends javax.swing.JFrame {
+public class VentanaJuegoFV extends javax.swing.JFrame {
 
     /**
-     * Creates new form VentanaJuego
+     * Creates new form VentanaJuegoFV
      */
-    public VentanaJuego() {
+    public VentanaJuegoFV() {
         initComponents();
     }
 
@@ -61,20 +61,20 @@ public class VentanaJuego extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(VentanaJuego.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VentanaJuegoFV.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(VentanaJuego.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VentanaJuegoFV.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(VentanaJuego.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VentanaJuegoFV.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(VentanaJuego.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VentanaJuegoFV.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new VentanaJuego().setVisible(true);
+                new VentanaJuegoFV().setVisible(true);
             }
         });
     }

@@ -217,6 +217,6 @@ public class VentanaPreJuego extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JLabel lJugador;
     private javax.swing.JTable tJugadores;
-    private javax.swing.JTable tTemas;
+    public static javax.swing.JTable tTemas;
     // End of variables declaration//GEN-END:variables
 }

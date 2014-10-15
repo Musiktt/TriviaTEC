@@ -6,6 +6,7 @@
 
 package Interfaz_TriviaT;
 import java.util.Vector;
+import javax.swing.JOptionPane;
 import trivia_tec.*;
 import static trivia_tec.Trivia_TEC.juego;
 /**
@@ -92,7 +93,7 @@ public class CursosDeProfesor extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        nombP.getText();
+        
         Vector profesores = juego.getProfesores();
         if(profesores.isEmpty()){
             System.out.println("hola");
@@ -102,15 +103,31 @@ public class CursosDeProfesor extends javax.swing.JFrame {
                 Profesor temp = (Profesor) profesores.get(i);
                 if (temp != null){
                     if (temp.getNombre().equals(nombP.getText())){
+<<<<<<< HEAD
                         System.out.println("Este profe es");
                         return;
+=======
+                        
+                        Vector cursos = juego.getCursos();
+                        for (int j=0; j<juego.getCursos().size(); j++){
+                            Curso temp2 = (Curso) cursos.get(i);
+                            if (temp2 != null){
+                                if (temp2.getProfesor().equals(temp.getNombre())){
+                                    JOptionPane.showMessageDialog(null, temp2.getNombre());
+                                }
+                            }
+                
+                        }
+                        
+>>>>>>> d126540c2b75c65e0d5762573771701846178212
                     }
+        
                 }
-                System.out.println("no es este");
+                
             }
-            System.out.println("vector vacio");
+           
         }
-        System.out.println("terminó");
+        
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**

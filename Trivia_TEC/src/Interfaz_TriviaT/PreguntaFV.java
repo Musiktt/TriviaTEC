@@ -18,7 +18,7 @@ public class PreguntaFV extends javax.swing.JFrame {
      * Creates new form CreaPregunta
      */
     public PreguntaFV() {
-        initComponents();
+        initComponents(); 
         Vector cursos = juego.getCursos();
         for(int i = 0; i<cursos.size(); i++){
             Curso actual = (Curso) cursos.get(i);

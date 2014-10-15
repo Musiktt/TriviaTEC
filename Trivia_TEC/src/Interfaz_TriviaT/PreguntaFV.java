@@ -22,15 +22,6 @@ public class PreguntaFV extends javax.swing.JFrame {
         Vector cursos = juego.getCursos();
         for(int i = 0; i<cursos.size(); i++){
             Curso actual = (Curso) cursos.get(i);
-<<<<<<< HEAD
-          
-            
-            
-            
-            
-=======
-            cursoFV.addItem(actual.getCodigo()+" - "+actual.getNombre());
->>>>>>> origin/master
         }
     }
 

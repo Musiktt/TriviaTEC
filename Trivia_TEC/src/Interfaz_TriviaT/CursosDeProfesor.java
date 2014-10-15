@@ -95,11 +95,18 @@ public class CursosDeProfesor extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         
         Vector profesores = juego.getProfesores();
+        if(profesores.isEmpty()){
+            System.out.println("hola");
+        }
         for (int i=0; i<juego.getProfesores().size(); i++){
             if (profesores != null){
                 Profesor temp = (Profesor) profesores.get(i);
                 if (temp != null){
                     if (temp.getNombre().equals(nombP.getText())){
+<<<<<<< HEAD
+                        System.out.println("Este profe es");
+                        return;
+=======
                         
                         Vector cursos = juego.getCursos();
                         for (int j=0; j<juego.getCursos().size(); j++){
@@ -112,6 +119,7 @@ public class CursosDeProfesor extends javax.swing.JFrame {
                 
                         }
                         
+>>>>>>> d126540c2b75c65e0d5762573771701846178212
                     }
         
                 }
@@ -155,6 +163,10 @@ public class CursosDeProfesor extends javax.swing.JFrame {
                 new CursosDeProfesor().setVisible(true);
             }
         });
+        Profesor profe1 = new Profesor("Lorena", "1-234-567", "lvalerio@itcr.ac.cr", "123456", "01/10/2014");
+        juego.agregarProfesor(profe1);
+        Curso curso1 = new Curso("Programación Orientada a Objetos", "IC2101", 30, 2, 2014, profe1);
+        juego.agregarCurso(curso1);
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

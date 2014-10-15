@@ -623,17 +623,17 @@ public class VentanaGestion extends javax.swing.JFrame {
         int tipoPS = comboTipoP.getSelectedIndex();
         
         if (tipoPS==0){//Se establece reglas condicionales para lograr abrir una ventana en especial
-            PreguntaFV nuevaFV = new PreguntaFV();
+            VentanaPreguntaFV nuevaFV = new VentanaPreguntaFV();
             this.hide();
             nuevaFV.show();
         }
         else if (tipoPS==1){
-            PreguntaSU nuevaSU = new PreguntaSU();
+            VentanaPreguntaSU nuevaSU = new VentanaPreguntaSU();
             this.hide();
             nuevaSU.show();    
         }
         else{
-            PreguntaSM nuevaSM = new PreguntaSM();
+            VentanaPreguntaSM nuevaSM = new VentanaPreguntaSM();
             this.hide();
             nuevaSM.show();
         }

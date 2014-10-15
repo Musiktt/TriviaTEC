@@ -41,7 +41,8 @@
 */
 
 package trivia_tec;
-import Interfaz_TriviaT.VentanaInicio;
+
+import java.util.Vector;
 
 public class Trivia_TEC {
 
@@ -52,6 +53,17 @@ public class Trivia_TEC {
     public static void main(String[] args) {
         // TODO code application logic here
         
+        PreguntaFV nuevo = new PreguntaFV();
+        Vector temp = new Vector();
+        temp.add(nuevo);
+        Object temp2 = temp.get(0);
+        String clase = temp2.getClass().getName();
+        if(clase.equalsIgnoreCase("trivia_tec.PreguntaFV")){
+            System.out.println(temp2.getClass().getName());
+        }
+        else{
+            System.out.println("no");
+        }
         
         
         

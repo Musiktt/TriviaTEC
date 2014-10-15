@@ -5,6 +5,7 @@
  */
 
 package Interfaz_TriviaT;
+import java.util.Random;
 import java.util.Vector;
 import javax.swing.table.DefaultTableModel;
 import trivia_tec.*;
@@ -21,12 +22,13 @@ public class VentanaPreJuego extends javax.swing.JFrame {
     
     /**
      * Creates new form VentanaPreJuego
-     * @param curso
      */
     public VentanaPreJuego() {
         initComponents();
         actualizarJugadores();
         actualizarTemas();
+        pregunta.setVisible(false);
+        tema.setVisible(false);
         
     }
     
@@ -66,17 +68,7 @@ public class VentanaPreJuego extends javax.swing.JFrame {
         
     }
     
-    public void insertarOrdenados(Jugador temp, int i){ //temporal
-        char nombre1 = temp.getEstudiante().getNombre().charAt(0);
-        for(int j = 0; j < tJugadores.getRowCount(); j++){
-            String actual = (String) tJugadores.getValueAt(j, 0);
-            char nombre2 = actual.charAt(0);
-            if(nombre1>nombre2){
-                tJugadores.setValueAt(temp.getEstudiante().getNombre(), i, 0);
-                break;
-            }
-        }
-    }
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -92,8 +84,10 @@ public class VentanaPreJuego extends javax.swing.JFrame {
         jScrollPane4 = new javax.swing.JScrollPane();
         tTemas = new javax.swing.JTable();
         jLabel1 = new javax.swing.JLabel();
-        lJugador = new javax.swing.JLabel();
         bJugar = new javax.swing.JButton();
+        jTextField1 = new javax.swing.JTextField();
+        pregunta = new javax.swing.JTextField();
+        tema = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -123,11 +117,18 @@ public class VentanaPreJuego extends javax.swing.JFrame {
 
         jLabel1.setText("Es el turno de:");
 
-        lJugador.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        lJugador.setForeground(new java.awt.Color(0, 153, 0));
-        lJugador.setText("Jugador");
-
         bJugar.setText("Jugar");
+        bJugar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bJugarActionPerformed(evt);
+            }
+        });
+
+        jTextField1.setEditable(false);
+
+        pregunta.setText("jTextField2");
+
+        tema.setText("jTextField2");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -143,11 +144,14 @@ public class VentanaPreJuego extends javax.swing.JFrame {
                         .addGap(26, 26, 26)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel1)
-                            .addComponent(lJugador)))
+                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(83, 83, 83)
-                        .addComponent(bJugar)))
-                .addContainerGap(116, Short.MAX_VALUE))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(pregunta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(bJugar)
+                            .addComponent(tema, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(48, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -161,15 +165,55 @@ public class VentanaPreJuego extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(87, 87, 87)
                         .addComponent(jLabel1)
-                        .addGap(18, 18, 18)
-                        .addComponent(lJugador)
-                        .addGap(98, 98, 98)
-                        .addComponent(bJugar)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(102, 102, 102)
+                        .addComponent(bJugar)
+                        .addGap(70, 70, 70)
+                        .addComponent(pregunta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(tema, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(73, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    public void seleccionarJugador(int i){
+        
+    }
+    private void bJugarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bJugarActionPerformed
+        // TODO add your handling code here:
+        Curso temp = juego.buscarCurso(VentanaParticipantes.tCurso.getText());
+        Random rand = new Random();
+        int n = rand.nextInt(temp.getTemas().size());
+        Tema temaRandom = (Tema) temp.getTemas().get(n);
+        tema.setText(temaRandom.getNombre());
+        
+        int m = rand.nextInt(temaRandom.getPreguntas().size());
+        Object preguntaRandom = temaRandom.getPreguntas().get(m);
+        String clase = preguntaRandom.getClass().getName();
+        
+        if(clase.equalsIgnoreCase("trivia_tec.PreguntaFV")){
+            VentanaJuegoFV juegoFV = new VentanaJuegoFV();
+            juegoFV.setVisible(true);
+            PreguntaFV preguntaFV = (PreguntaFV) preguntaRandom;
+            pregunta.setText(preguntaFV.toString());
+        }
+        else if(clase.equalsIgnoreCase("trivia_tec.PreguntaSM")){
+            VentanaJuegoSM juegoSM = new VentanaJuegoSM();
+            juegoSM.setVisible(true);
+            PreguntaSM preguntaSM = (PreguntaSM) preguntaRandom;
+            pregunta.setText(preguntaSM.toString());
+        }
+        else if(clase.equalsIgnoreCase("trivia_tec.PreguntaSU")){
+            VentanaJuegoSU juegoSU = new VentanaJuegoSU();
+            juegoSU.setVisible(true);
+            PreguntaSU preguntaSU = (PreguntaSU) preguntaRandom;
+            pregunta.setText(preguntaSU.toString());
+        }
+          
+    }//GEN-LAST:event_bJugarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -215,8 +259,10 @@ public class VentanaPreJuego extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
-    private javax.swing.JLabel lJugador;
+    public static javax.swing.JTextField jTextField1;
+    public static javax.swing.JTextField pregunta;
     private javax.swing.JTable tJugadores;
     public static javax.swing.JTable tTemas;
+    private javax.swing.JTextField tema;
     // End of variables declaration//GEN-END:variables
 }

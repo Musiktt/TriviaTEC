@@ -6,8 +6,10 @@
 
 package Interfaz_TriviaT;
 import java.util.Vector;
+import javax.swing.table.DefaultTableModel;
 import trivia_tec.*;
 import static trivia_tec.Trivia_TEC.juego;
+
 
 
 /**
@@ -19,24 +21,41 @@ public class VentanaPreJuego extends javax.swing.JFrame {
     
     /**
      * Creates new form VentanaPreJuego
+     * @param curso
      */
     public VentanaPreJuego() {
         initComponents();
         actualizarJugadores();
+        
     }
     
     public void actualizarJugadores(){
-        System.out.println("1");
-        Partida actual = juego.getPartida();
-        System.out.println("2");
-        Vector jugadores = actual.getParticipantes();
-        System.out.println("3");
+        
+        Partida actual = juego.getPartida();        
+        Vector jugadores = actual.getParticipantes();        
         for(int i = 0; i<jugadores.size(); i++){
             Jugador temp = (Jugador) jugadores.get(i);
-            if(i>=jTable1.getRowCount()){
-                jTable1.addRowSelectionInterval(i, i);
+            while(i>=tJugadores.getRowCount()){
+                DefaultTableModel model = (DefaultTableModel) tJugadores.getModel();
+                Vector row = new Vector();
+                row.add(null);
+                model.addRow(row);
+                
             }
-            jTable1.setValueAt(temp.getEstudiante().getNombre(), i, 0);
+            tJugadores.setValueAt(temp.getEstudiante().getNombre(), i, 0);
+        }
+        
+    }
+    
+    public void insertarOrdenados(Jugador temp, int i){ //temporal
+        char nombre1 = temp.getEstudiante().getNombre().charAt(0);
+        for(int j = 0; j < tJugadores.getRowCount(); j++){
+            String actual = (String) tJugadores.getValueAt(j, 0);
+            char nombre2 = actual.charAt(0);
+            if(nombre1>nombre2){
+                tJugadores.setValueAt(temp.getEstudiante().getNombre(), i, 0);
+                break;
+            }
         }
     }
 
@@ -50,16 +69,17 @@ public class VentanaPreJuego extends javax.swing.JFrame {
     private void initComponents() {
 
         jScrollPane3 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        tJugadores = new javax.swing.JTable();
         jScrollPane4 = new javax.swing.JScrollPane();
         jTable2 = new javax.swing.JTable();
+        jLabel1 = new javax.swing.JLabel();
+        lJugador = new javax.swing.JLabel();
+        bJugar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tJugadores.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null},
-                {null},
                 {null},
                 {null}
             },
@@ -67,7 +87,7 @@ public class VentanaPreJuego extends javax.swing.JFrame {
                 "Jugadores"
             }
         ));
-        jScrollPane3.setViewportView(jTable1);
+        jScrollPane3.setViewportView(tJugadores);
 
         jTable2.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -82,6 +102,14 @@ public class VentanaPreJuego extends javax.swing.JFrame {
         ));
         jScrollPane4.setViewportView(jTable2);
 
+        jLabel1.setText("Es el turno de:");
+
+        lJugador.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        lJugador.setForeground(new java.awt.Color(0, 153, 0));
+        lJugador.setText("Jugador");
+
+        bJugar.setText("Jugar");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -91,15 +119,33 @@ public class VentanaPreJuego extends javax.swing.JFrame {
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(258, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(26, 26, 26)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel1)
+                            .addComponent(lJugador)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(83, 83, 83)
+                        .addComponent(bJugar)))
+                .addContainerGap(116, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(24, 24, 24)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 365, Short.MAX_VALUE)
-                    .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(24, 24, 24)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 365, Short.MAX_VALUE)
+                            .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(87, 87, 87)
+                        .addComponent(jLabel1)
+                        .addGap(18, 18, 18)
+                        .addComponent(lJugador)
+                        .addGap(98, 98, 98)
+                        .addComponent(bJugar)))
                 .addContainerGap(73, Short.MAX_VALUE))
         );
 
@@ -135,7 +181,9 @@ public class VentanaPreJuego extends javax.swing.JFrame {
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
+            
             public void run() {
+                
                 new VentanaPreJuego().setVisible(true);
             }
         });
@@ -144,9 +192,12 @@ public class VentanaPreJuego extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton bJugar;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
-    private javax.swing.JTable jTable1;
     private javax.swing.JTable jTable2;
+    private javax.swing.JLabel lJugador;
+    private javax.swing.JTable tJugadores;
     // End of variables declaration//GEN-END:variables
 }

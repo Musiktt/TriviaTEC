@@ -676,7 +676,9 @@ public class VentanaGestion extends javax.swing.JFrame {
         if((errorP==false)&&(errorC==false)){
             Curso nuevoC = new Curso(nombre, codigo, cupo, semestre, año, profesor);
             juego.agregarCurso(nuevoC);
+            profesor.agregarCurso(nuevoC);
             limpiarC();
+            
         }
         errorP = false;
         errorC = false;

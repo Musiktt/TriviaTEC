@@ -45,11 +45,12 @@ public class PreguntaSU extends javax.swing.JFrame {
         jLabel8 = new javax.swing.JLabel();
         guardarSU = new javax.swing.JButton();
         jLabel9 = new javax.swing.JLabel();
-        cursoSU = new javax.swing.JComboBox();
         temasSU = new javax.swing.JButton();
+        cursoSU = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel1.setText("Formulando pregunta de Selección Única");
 
         jLabel2.setText("Formule la pregunta en el siguiente espacio en blanco");
@@ -106,12 +107,6 @@ public class PreguntaSU extends javax.swing.JFrame {
                         .addContainerGap()
                         .addComponent(contentSU, javax.swing.GroupLayout.PREFERRED_SIZE, 351, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(76, 76, 76)
-                        .addComponent(jLabel1))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(48, 48, 48)
-                        .addComponent(jLabel2))
-                    .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(guardarSU))
                     .addGroup(layout.createSequentialGroup()
@@ -128,7 +123,7 @@ public class PreguntaSU extends javax.swing.JFrame {
                             .addComponent(opcion2SU)
                             .addComponent(opcion3SU)
                             .addComponent(opcion4SU)
-                            .addComponent(cursoSU, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                            .addComponent(cursoSU, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -137,10 +132,17 @@ public class PreguntaSU extends javax.swing.JFrame {
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel7)
                                     .addComponent(jLabel8))
-                                .addGap(18, 18, 18)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jComboBoxSU, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(respuesta1SU, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(jComboBoxSU, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(109, 109, 109))
+                                    .addComponent(respuesta1SU)))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(48, 48, 48)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel1)
+                            .addComponent(jLabel2))))
                 .addContainerGap(15, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -273,7 +275,7 @@ public class PreguntaSU extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField contentSU;
-    private javax.swing.JComboBox cursoSU;
+    private javax.swing.JTextField cursoSU;
     private javax.swing.JButton guardarSU;
     private javax.swing.JComboBox jComboBoxSU;
     private javax.swing.JLabel jLabel1;

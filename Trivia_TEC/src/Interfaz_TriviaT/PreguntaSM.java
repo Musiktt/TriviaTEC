@@ -47,8 +47,8 @@ public class PreguntaSM extends javax.swing.JFrame {
         jLabel9 = new javax.swing.JLabel();
         respuesta1SM = new javax.swing.JTextField();
         jLabel10 = new javax.swing.JLabel();
-        cursoSM = new javax.swing.JComboBox();
         temasSM = new javax.swing.JButton();
+        cursoSM = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -147,7 +147,7 @@ public class PreguntaSM extends javax.swing.JFrame {
                                 .addComponent(opcion2SM)
                                 .addComponent(opcion3SM)
                                 .addComponent(opcion4SM)
-                                .addComponent(cursoSM, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
+                                .addComponent(cursoSM, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addContainerGap(22, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -284,7 +284,7 @@ public class PreguntaSM extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField contentSM;
-    private javax.swing.JComboBox cursoSM;
+    private javax.swing.JTextField cursoSM;
     private javax.swing.JButton guardarSM;
     private javax.swing.JComboBox jComboBoxSM;
     private javax.swing.JLabel jLabel1;

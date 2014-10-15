@@ -26,6 +26,7 @@ public class VentanaPreJuego extends javax.swing.JFrame {
     public VentanaPreJuego() {
         initComponents();
         actualizarJugadores();
+        actualizarTemas();
         
     }
     
@@ -43,6 +44,24 @@ public class VentanaPreJuego extends javax.swing.JFrame {
                 
             }
             tJugadores.setValueAt(temp.getEstudiante().getNombre(), i, 0);
+        }
+        
+    }
+    public void actualizarTemas(){
+        
+        Partida actual = juego.getPartida();        
+        Curso temp = juego.buscarCurso(VentanaParticipantes.tCurso.getText());
+        Vector temas = temp.getTemas();
+        for(int i = 0; i<temas.size(); i++){
+            Tema tema = (Tema) temas.get(i);
+            while(i>=tTemas.getRowCount()){
+                DefaultTableModel model = (DefaultTableModel) tTemas.getModel();
+                Vector row = new Vector();
+                row.add(null);
+                model.addRow(row);
+                
+            }
+            tTemas.setValueAt(tema.getNombre(), i, 0);
         }
         
     }
@@ -71,7 +90,7 @@ public class VentanaPreJuego extends javax.swing.JFrame {
         jScrollPane3 = new javax.swing.JScrollPane();
         tJugadores = new javax.swing.JTable();
         jScrollPane4 = new javax.swing.JScrollPane();
-        jTable2 = new javax.swing.JTable();
+        tTemas = new javax.swing.JTable();
         jLabel1 = new javax.swing.JLabel();
         lJugador = new javax.swing.JLabel();
         bJugar = new javax.swing.JButton();
@@ -89,7 +108,7 @@ public class VentanaPreJuego extends javax.swing.JFrame {
         ));
         jScrollPane3.setViewportView(tJugadores);
 
-        jTable2.setModel(new javax.swing.table.DefaultTableModel(
+        tTemas.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null},
                 {null},
@@ -100,7 +119,7 @@ public class VentanaPreJuego extends javax.swing.JFrame {
                 "Temas"
             }
         ));
-        jScrollPane4.setViewportView(jTable2);
+        jScrollPane4.setViewportView(tTemas);
 
         jLabel1.setText("Es el turno de:");
 
@@ -196,8 +215,8 @@ public class VentanaPreJuego extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
-    private javax.swing.JTable jTable2;
     private javax.swing.JLabel lJugador;
     private javax.swing.JTable tJugadores;
+    private javax.swing.JTable tTemas;
     // End of variables declaration//GEN-END:variables
 }

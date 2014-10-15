@@ -27,7 +27,7 @@ public class PreguntaFV extends javax.swing.JFrame {
     }
 
     PreguntaFV(Trivia juego) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     /**
@@ -206,7 +206,7 @@ public class PreguntaFV extends javax.swing.JFrame {
         }
         else if (obtenerdifFV == 4){
             dificultadFV = "Nivel 5";
-        };
+        }; 
         
     }//GEN-LAST:event_guardarFVActionPerformed
 
@@ -240,7 +240,7 @@ public class PreguntaFV extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new PreguntaFV(juego).setVisible(true);
+                                      new PreguntaFV(juego).setVisible(true);
             }
         });
     }

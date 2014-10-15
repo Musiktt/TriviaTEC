@@ -140,5 +140,20 @@ public class Curso {
         return false;
     }
     
+    public Tema buscarTema(String n){
+        Tema actual;
+        for(int i = 0; i<temas.size(); i++){
+            actual = (Tema) temas.get(i);
+            if(actual.getNombre().equalsIgnoreCase(n)){
+                return actual;
+            }
+        }
+        return null;
+    }
     
+    
+    
+    public boolean responderPregunta(Tema t, Object p, String r){
+       return true; 
+    }
 }

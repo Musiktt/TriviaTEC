@@ -19,6 +19,7 @@ public class VentanaParticipantes extends javax.swing.JFrame {
     Partida partida = new Partida();
     
     
+    
     /**
      * Creates new form VentanaParticipantes
      * @param juego */
@@ -195,6 +196,7 @@ public class VentanaParticipantes extends javax.swing.JFrame {
             partida.setNombre("Partida1");
             VentanaPreJuego pre = new VentanaPreJuego();
             pre.setVisible(true);
+            
             this.setVisible(false);
         }
         else{

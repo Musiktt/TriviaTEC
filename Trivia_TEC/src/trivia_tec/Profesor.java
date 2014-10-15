@@ -28,6 +28,9 @@ public class Profesor extends Persona{
         return "Profesor{" + "cursos=" + cursos + '}';
     }
     
+    public void agregarCurso(Curso c){
+        cursos.add(c);
+    }
    
     
 }
